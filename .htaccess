@@ -1,0 +1,13 @@
+ErrorDocument 404 /
+AddDefaultCharset UTF-8
+php_value magic_quotes_runtime Off
+php_value magic_quotes_gpc Off
+php_flag register_globals off
+
+DirectoryIndex index.php
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule ^(.*)$ index.php [L]
